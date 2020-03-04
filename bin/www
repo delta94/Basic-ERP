@@ -7,6 +7,35 @@
 var app = require('../app');
 var debug = require('debug')('thuyonlinesales:server');
 var http = require('http');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+
+/**
+ * Get Env file load to the app via DotEnv
+ */
+dotenv.config({ path: './config.env' });
+
+/**
+ * Make connection to MongoDB
+ * 
+ * 
+ */
+const DB = process.env.DATABASE.replace(
+	'<DATABASE_PASSWORD>',
+	process.env.DATABASE_PASSWORD
+);
+
+mongoose
+	.connect(DB, {
+        // Some option dealing with Deprecation
+		useNewUrlParser: true,
+		useCreateIndex: true,
+		useFindAndModify: false,
+    useUnifiedTopology: true
+	})
+	.then(() => {
+		console.log('DB connection successful');
+	});
 
 /**
  * Get port from environment and store in Express.
@@ -86,7 +115,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-    
-  console.log('App start at' + bind);
+
+  console.log(`App running on port ${port} as ${process.env.NODE_ENV}`);
   debug('Listening on ' + bind);
 }
