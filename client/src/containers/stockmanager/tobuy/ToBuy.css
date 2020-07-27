@@ -1,0 +1,92 @@
+.tobuy-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#stock-btn {
+  background-color: #282e43;
+  color: white;
+}
+
+#stock-btn:hover:enabled {
+  background-color: #5d72c0;
+}
+
+#stock-btn:disabled{
+  background-color: #b7bac5;
+}
+
+.tobuy-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tobuy-box {
+  width: 45%;
+  margin: 20px 20px;
+  position: relative;
+}
+
+.tobuy-box-content {
+  /* Arrange ele */
+  display: flex;
+  flex-direction: row;
+}
+
+.tobuy-product-info {
+  padding: 0 10px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 10px;
+  width: 85%;
+  box-shadow: 0 0 30px rgb(214, 207, 207);
+
+  /* Arrange ele */
+  display: flex;
+  flex-direction: row;
+  /* on top */
+  z-index: 20;
+  position: relative;
+  background-color: white;
+}
+
+.tobuy-product-price {
+  width: 120px;
+  box-shadow: 0 0 30px rgb(214, 207, 207);
+  background-color: #ffdd94;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 20;
+}
+
+/* Footer represent customer */
+.tobuy-customer {
+  box-shadow: 0 0 30px rgb(214, 207, 207);
+  border-radius: 20px;
+  margin-top: -20px;
+  padding: 30px 20px 10px 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 2;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.tobuy-product-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.tobuy-checked-btn {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  transform: translateX(-120%) translateY(-130%);
+  z-index: 100;
+}

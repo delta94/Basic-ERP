@@ -1,0 +1,51 @@
+.order-popup header {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.order-popup .order-info-timestamp {
+  margin-bottom: 10px;
+}
+
+.order-tag {
+  display: inline-block;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  font-size: large;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+.order-id {
+  background-color: #e9c46a;
+}
+
+.order-ref {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+/* Status Bar for pendings order */
+.pending-order .order-status {
+  background-color: #d97d54;
+  color: white;
+}
+
+.completed-order .order-status {
+  background-color: #7cee85;
+  font-weight: 500;
+}
+
+.product-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+}
+
+.product-box .product-info {
+  width: 400px;
+}

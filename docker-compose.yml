@@ -1,0 +1,12 @@
+version: '3.6'
+
+services: 
+  thuyonlinesales_server:
+    container_name: server
+    build: ./server
+    command: npm start
+    working_dir: /usr/src/thuyonlinesales/server
+    ports: 
+      - "3001:3001"
+    volumes: 
+      - ./:/usr/src/thuyonlinesales/server

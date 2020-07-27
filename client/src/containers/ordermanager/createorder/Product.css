@@ -1,0 +1,23 @@
+.product_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.create-order-page .product_info{
+  width: 400px;
+}
+
+.product_quantity {
+  width: 50px;
+}
+
+.product_total {
+  width: 200px;
+}

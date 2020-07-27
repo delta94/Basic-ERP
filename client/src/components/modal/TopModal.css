@@ -1,0 +1,41 @@
+.diy-fade {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1070;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.diy-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1080;
+  border-radius: 10px;
+  transform: translateX(-50%) translateY(-50%);
+  width: 500px;
+  background-color: white;
+  padding: 20px;
+}
+
+.diy-modal-header {
+  padding-bottom: 10px;
+  position: relative;
+  border-bottom: 1px solid rgb(167, 163, 163);
+}
+
+.diy-modal-header button {
+  border: none;
+  background-color: #1e2233;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  top: -20%;
+  transform: translateX(-50%);
+  z-index: 5000;
+}

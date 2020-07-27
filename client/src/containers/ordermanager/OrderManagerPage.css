@@ -1,0 +1,38 @@
+#order-manager-page .table-responsive {
+  max-height: 800px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-group button {
+  margin: 0 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  border: none;
+  padding: 3px 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.order-toolkit button {
+  background-color: #282e43;
+  color: white;
+}
+
+.order-toolkit button:hover:enabled {
+  background-color: #5d72c0;
+}
+
+.button-group button:disabled {
+  background-color: #b7bac5;
+}
+
+
+
+.table-row-selected {
+  background-color: blanchedalmond;
+}

@@ -1,0 +1,41 @@
+.order-popup header {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.order-popup .order-info-timestamp {
+  margin-bottom: 10px;
+}
+
+.order-popup .order-status{
+  width: 200px;
+  font-size: large;
+  margin-bottom: 20px;
+}
+
+/* General status bar for all components */
+.order-status {
+  padding: 0 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+/* Status Bar for pendings order */
+.pending-order .order-status {
+  background-color: #d97d54;
+  color: white;
+}
+
+
+.product-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+}
+
+.product-box .product-info {
+  width: 400px;
+}

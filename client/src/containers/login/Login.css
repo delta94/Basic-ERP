@@ -1,0 +1,25 @@
+.login-page {
+  display: block;
+  height: 100vh;
+  background-image: url('../../assets/img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgb(48, 47, 47);
+  padding: 20px;
+  background-color: white;
+
+  /* Centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.login-brand {
+  color: white;
+}

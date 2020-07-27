@@ -1,0 +1,17 @@
+.nav-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.travels-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.navbar{
+  margin-bottom: 20px;
+}

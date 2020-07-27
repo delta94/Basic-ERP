@@ -1,0 +1,2 @@
+export const ADMIN_LOADED = 'ADMIN_LOADED';
+export const ADMIN_UNLOADED = 'ADMIN_UNLOADED';

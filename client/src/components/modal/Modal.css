@@ -1,0 +1,13 @@
+.modal-lg {
+  max-width: none;
+  width: 1200px;
+}
+
+.modal-sm{
+  max-width: none;
+  width: 400px;
+}
+
+.modal-sm .modal-body{
+  overflow-y: unset;
+}

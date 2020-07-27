@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './app/App';
+import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { reducer_ChangeOrderManagerRoute } from './reducers';
+import rootReducers from './redux/reducers/root_reducers';
 
 const logger = createLogger();
 
-const rootReducer = combineReducers({ reducer_ChangeOrderManagerRoute });
 const store = createStore(
-  rootReducer,
+  rootReducers,
   applyMiddleware(thunkMiddleware, logger)
 );
 

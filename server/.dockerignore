@@ -1,0 +1,10 @@
+# #exclude node_modules
+# node_modules
+
+# #exclude dev config files
+# .vscode
+# .prettierrc
+# .eslintrc.json
+# .gitignore
+
+# *.md

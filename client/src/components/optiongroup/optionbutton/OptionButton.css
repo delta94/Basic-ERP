@@ -1,0 +1,38 @@
+.options-box label {
+  margin-bottom: 0;
+}
+
+.option-box {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+/* Not allow user to select & paste */
+.option-box label {
+  user-select: none;
+}
+
+.option-box label span {
+  padding: 5px 20px !important;
+  margin: 5px 0px;
+  text-align: center;
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  background-color: rgb(241, 228, 240);
+  transition: background-color 0.5s;
+  border-radius: 20px;
+}
+
+.option-box label input {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.option-box input:checked + span {
+  background-color: #f67280;
+  transition: background-color 0.5s;
+  color: #fff;
+  border-style: none;
+}

@@ -1,0 +1,77 @@
+.order {
+  margin: 0 20px;
+  margin-bottom: 30px;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(194, 193, 193);
+  position: relative;
+}
+
+/* Order id */
+.order .order-id {
+  width: 180px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #ffdd94;
+  display: inline-block;
+}
+
+/* General status bar for all components */
+.order-status {
+  padding: 0 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+/* Only for OrderCard's status bar */
+.order .order-status {
+  max-width: 150px;
+}
+
+/* Status Bar for pendings order */
+.pending-order .order-status {
+  background-color: #d97d54;
+  color: white;
+}
+
+/* Order timestamp */
+.order .order-timpstamp {
+  max-width: 200px;
+}
+
+/* Order info */
+.order .order-info {
+  padding: 0 20px;
+}
+
+/* Order image button */
+.order .order-info-button {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  transform: translateX(-100%) translateY(-100%);
+  margin-left: -10px;
+}
+
+.info-button {
+  width: 50px;
+  height: 50px;
+  background-color: #ffdd94;
+  border: none;
+  border-radius: 50%;
+}
+
+.info-button-img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../assets/img/search.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  /* Centering */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ------------ */
