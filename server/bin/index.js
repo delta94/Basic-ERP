@@ -1,14 +1,12 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
-
-var app = require('../app');
-var debug = require('debug')('thuyonlinesales:server');
-var http = require('http');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const debug = require('debug')('thuyonlinesales:server');
+const http = require('http');
+const dotenv = require('dotenv');
+
+const app = require('../app');
 
 /**
  * Get Env file load to the app via DotEnv
@@ -17,47 +15,41 @@ dotenv.config({ path: './config.env' });
 
 /**
  * Make connection to MongoDB
- * 
- * 
+ *
+ *
  */
 let DB = process.env.DATABASE;
 
-  //Fill username
-DB = DB.replace(
-	'<DATABASE_USERNAME>',
-	process.env.DATABASE_USERNAME
-);
+// Fill username
+DB = DB.replace('<DATABASE_USERNAME>', process.env.DATABASE_USERNAME);
 
-  //Fill password
-DB = DB.replace(
-	'<DATABASE_PASSWORD>',
-	process.env.DATABASE_PASSWORD
-);
+// Fill password
+DB = DB.replace('<DATABASE_PASSWORD>', process.env.DATABASE_PASSWORD);
 
 mongoose
-	.connect(DB, {
-        // Some option dealing with Deprecation
-		useNewUrlParser: true,
-		useCreateIndex: true,
-		useFindAndModify: false,
+  .connect(DB, {
+    // Some option dealing with Deprecation
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
     useUnifiedTopology: true
-	})
-	.then(() => {
-		console.log('DB connection successful');
-	});
+  })
+  .then(() => {
+    console.log('DB connection successful');
+  });
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3001');
+const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -72,7 +64,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -96,18 +88,16 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -120,11 +110,9 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
 
   console.log(`App running on port ${port} as ${process.env.NODE_ENV}`);
-  debug('Listening on ' + bind);
+  debug(`Listening on ${bind}`);
 }

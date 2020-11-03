@@ -1,10 +1,11 @@
-const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
+
 const indexRouter = require('./routes/index');
 const customersRoute = require('./routes/customersRoute');
 const crawlersRoute = require('./routes/crawlersRoute');
@@ -21,11 +22,11 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-console.log('checked');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -51,6 +52,7 @@ app.all('*', (req, res, next) => {
   // Additional middleware can put here
   res.end();
 });
+
 
 // Error Middleware Handler
 app.use(globalErrorHandler);

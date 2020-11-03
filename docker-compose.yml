@@ -1,12 +1,16 @@
 version: '3.6'
 
 services: 
-  thuyonlinesales_server:
+  server:
     container_name: server
     build: ./server
-    command: npm start
-    working_dir: /usr/src/thuyonlinesales/server
     ports: 
       - "3001:3001"
-    volumes: 
-      - ./:/usr/src/thuyonlinesales/server
+    image: lusanney/thuyserver
+  client:
+    container_name: client
+    build: ./client
+    stdin_open: true
+    ports: 
+      - "80:80"
+    image: lusanney/thuyclient

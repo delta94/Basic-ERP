@@ -27,6 +27,8 @@ export const loginRequestAPI = async (email, password) => {
     password: password
   });
 
+  console.log(respond);
+
   //Return a Response from server
   return respond;
 };

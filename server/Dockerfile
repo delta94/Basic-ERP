@@ -1,14 +1,15 @@
-FROM node:latest
-FROM keymetrics/pm2:latest-alpine
-
-#Specify the working directory 
-WORKDIR /usr/src/thuyonlinesales/server
-
-#Specify copy from...to...
-COPY ./ ./
-
-# Install app dependencies
-ENV NPM_CONFIG_LOGLEVEL warn
+FROM node:latest as builder
+WORKDIR /installer
+COPY package.json /installer/
 RUN npm install
+COPY . /installer/
+RUN npx gulp --releaseVersion 1.0.0
 
-CMD ["/bin/bash", "pm2-runtime", "start", "pm2.json"]
+FROM node:latest
+WORKDIR /app
+COPY --from=builder /installer/build/  /app
+
+EXPOSE 3001
+
+# WORKDIR /server/build
+CMD ["npm","start"]
